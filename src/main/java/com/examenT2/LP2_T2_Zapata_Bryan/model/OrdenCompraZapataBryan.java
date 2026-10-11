@@ -43,4 +43,21 @@ public class OrdenCompraZapataBryan {
 
     @Column(name = "estado")
     private String estado;
+    
+    public String getEstadoDescripcion() {
+        if (estado == null) {
+            return "Pendiente";
+        }
+
+        switch (estado) {
+            case "P":
+                return "Pendiente";
+            case "C":
+                return "Completado";
+            case "A":
+                return "Anulado";
+            default:
+                return "Desconocido";
+        }
+    }
 }
